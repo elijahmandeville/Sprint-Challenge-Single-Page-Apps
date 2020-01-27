@@ -2,17 +2,17 @@ import React, { useState } from "react";
 
 
 export default function SearchForm(props) {
-  const [ name, setName ] = useState("");
-  const [ array, setArray ] = useState([]);
+  const [name, setName] = useState("");
+  const [array, setArray] = useState([]);
 
   const onSubmitHandler = (e) => {
-      e.preventDefault();
-      e.persist();
-      setName(e.target.name.value);
-      // console.log(props);
-      setArray(props.dataProp.filter(item => item.name.includes(name)));
+    e.preventDefault();
+    e.persist();
+    setName(e.target.name.value);
+    // console.log(props);
+    props.setCharacters(props.dataProp.filter(item => item.name.includes(name)));
   }
-  
+
 
   return (
     <section className="search-form">
@@ -27,4 +27,4 @@ export default function SearchForm(props) {
       </form>
     </section>
   );
-  }
+}

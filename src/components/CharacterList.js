@@ -24,7 +24,7 @@ export default function CharacterList() {
   return (
     <section className="character-list">
       <h1>Character List</h1>
-      <SearchForm dataProp={chars}/>
+      <SearchForm dataProp={chars} setCharacters={setChars} />
       <br />
       {chars.map((e, i) => {
         return <CharacterCard key={i} character={e} />
